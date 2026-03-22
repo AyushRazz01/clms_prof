@@ -1,3 +1,7 @@
+# Welcome to College Library Management System 📖
+
+# 🌐 Live Demo
+Want to see CLMS-UI? [Check it out here] -> https://ayush-razz-clms.vercel.app/
 
 This scaffold provides a robust foundation built with:
 
@@ -111,4 +115,11 @@ This scaffold includes a comprehensive set of modern web development tools:
 - **Image Optimization**: Automatic image processing with Sharp
 - **Type Safety**: End-to-end TypeScript with Zod validation
 - **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+
+## 👨‍💻 Creator
+
+Developed by **AYUSH RAJ** to demonstrate frontend development skills.
+
+Enjoy exploring the **College Library Management System**! 🍿
+
 
