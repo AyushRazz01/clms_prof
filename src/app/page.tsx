@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { BookOpen, User, Mail, Lock, GraduationCap } from 'lucide-react'
+import { BookOpen, User, Mail, Lock } from 'lucide-react'
 import { toast } from '@/hooks/use-toast'
 
 export default function AuthPage() {
@@ -35,7 +35,7 @@ export default function AuthPage() {
   const [registerPassword, setRegisterPassword] = useState('')
   const [registerConfirmPassword, setRegisterConfirmPassword] = useState('')
   const [registerRole, setRegisterRole] = useState('STUDENT')
-  const [registerUniversityId, setRegisterUniversityId] = useState('')
+
   const [registerBranch, setRegisterBranch] = useState('')
   const [registerYear, setRegisterYear] = useState('')
   const [registerSemester, setRegisterSemester] = useState('')
@@ -107,7 +107,6 @@ export default function AuthPage() {
         email: registerEmail,
         password: registerPassword,
         role: registerRole,
-        university_id: registerUniversityId,
       }
 
       // Add student/faculty specific fields
@@ -140,7 +139,6 @@ export default function AuthPage() {
       // Switch to login tab
       setRegisterName('')
       setRegisterEmail('')
-      setRegisterUniversityId('')
       setRegisterPassword('')
       setRegisterConfirmPassword('')
       setRegisterBranch('')
@@ -296,20 +294,7 @@ export default function AuthPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="register-university-id">University ID / Employee ID</Label>
-                      <div className="relative">
-                        <GraduationCap className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                        <Input
-                          id="register-university-id"
-                          placeholder="Enter your ID"
-                          className="pl-10"
-                          value={registerUniversityId}
-                          onChange={(e) => setRegisterUniversityId(e.target.value)}
-                          required
-                        />
-                      </div>
-                    </div>
+
 
                     <div className="space-y-2">
                       <Label htmlFor="register-email">Email</Label>

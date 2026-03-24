@@ -6,7 +6,7 @@ const VALID_ROLES = ['ADMIN', 'STUDENT', 'LIBRARIAN', 'FACULTY']
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, password, role, university_id, branch, year, semester } = await request.json()
+    const { name, email, password, role, branch, year, semester } = await request.json()
 
     if (!name || !email || !password) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -44,11 +44,10 @@ export async function POST(request: NextRequest) {
         full_name: name,
         email,
         role: resolvedRole as any,
-        university_id: university_id ?? null,
         branch: branch ?? null,
         year: year ? parseInt(year) : null,
         semester: semester ? parseInt(semester) : null,
-        status: 'APPROVED', // Auto-approve for now based on previous app logic
+        status: 'APPROVED',
       })
 
     if (upsertError) throw upsertError
